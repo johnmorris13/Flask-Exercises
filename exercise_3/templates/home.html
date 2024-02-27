@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <p><a href="{{ url_for('home') }}">Home</a> | <a href="{{ url_for('registered_users_list') }}">Users</a></p> 
+    <h1>Register</h1>
+    <form action="/" method="post">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="organization">Organization:</label><br>
+        <select id="organization" name="organization">
+            {% for org in organizations %}
+            <option value="{{ org }}">{{ org }}</option>
+            {% endfor %}
+        </select><br>
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>
